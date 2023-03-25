@@ -1,0 +1,9 @@
+.list {
+  display: flex;
+  flex-wrap: wrap;
+  flex: 1;
+  justify-content: flex-start;
+  /* align-items: center; */
+  width: 100%;
+  max-width: 1170px;
+}

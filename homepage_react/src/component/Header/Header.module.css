@@ -1,0 +1,42 @@
+.header {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: aliceblue;
+  padding: 1rem;
+  width: 100%;
+}
+
+img {
+  width: 100%;
+}
+
+.hcontainer {
+  flex: 1;
+  display: flex;
+  width: 100%;
+  max-width: 1170px;
+  justify-content: space-between;
+}
+.logo {
+  height: 50px;
+  max-width: 250px;
+  padding-left: 2%;
+}
+
+.nav {
+  display: inline-block;
+  vertical-align: middle;
+  padding-right: 1rem;
+  color: white;
+}
+
+.ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+}
+.li {
+  padding: 0.6rem;
+}

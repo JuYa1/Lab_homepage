@@ -1,0 +1,7 @@
+.mapcontainer {
+  display: flex;
+  width: 100%;
+  max-width: 1170px;
+  align-items: center;
+  flex-direction: column;
+}

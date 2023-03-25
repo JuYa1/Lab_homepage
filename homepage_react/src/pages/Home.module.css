@@ -1,0 +1,18 @@
+.homecontainer {
+  display: flex;
+  width: 100%;
+  align-items: center;
+  flex-direction: column;
+}
+
+.mainimg {
+  width: 100%;
+  max-width: 1170px;
+  padding: auto;
+  /* display: flex;
+    align-items: center; */
+}
+
+img {
+  width: 100%;
+}

@@ -1,0 +1,18 @@
+.tftcard {
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+  /* max-width: calc(1170px / 2); 수학적 계산 */
+  /* border: 1px solid black; */
+  box-sizing: border-box; /* border 안으로 넣기 */
+}
+
+.tftimg {
+  width: 250px;
+  height: 250px;
+}
+
+.tftdesc {
+  display: flex;
+  flex-direction: column;
+}

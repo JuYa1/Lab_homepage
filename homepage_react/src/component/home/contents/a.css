@@ -1,0 +1,11 @@
+.content {
+  width: calc(1170 / 3);
+  display: flex;
+  flex-direction: column;
+  box-sizing: border-box;
+  padding: 5px;
+}
+
+.content img {
+  object-fit: contain;
+}
