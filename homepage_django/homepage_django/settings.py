@@ -37,7 +37,8 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    'homepage',  # APP 이름
+    'rest_framework', # Rest 추가
+    'homepage_app',  # APP 이름
     'corsheaders'  # CORS 추가
 ]
 

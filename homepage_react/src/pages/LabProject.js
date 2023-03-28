@@ -39,7 +39,7 @@ export const LabProject = () => {
         <h1 className={styles.header}>Team</h1>
         <TeamList data={team.team} />
         <h1 className={styles.header}>TFT</h1>
-        <TFTList data={tft.tft} />
+        {/* <TFTList data={tft.tft} /> */}
       </div>
     </div>
   );
