@@ -5,14 +5,17 @@ function MemberCard({ data }) {
     <div className={styles.membercard}>
       <div className={styles.memberimg}>
         <div>
-          <img src={`http://localhost:8000/media/${data.mem_image}`} />
-          {/* <img src={data.mem_image} /> */}
+          <img
+            src={`http://localhost:8000/media/${data.mem_image}`}
+            className={styles.memimg}
+          />
         </div>
       </div>
       <div className={styles.memberdesc}>
         <div>{data.name}</div>
         <div>{data.email}</div>
         <div>{data.profile}</div>
+        <button>more</button>
       </div>
     </div>
   );

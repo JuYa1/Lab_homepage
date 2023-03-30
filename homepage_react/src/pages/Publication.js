@@ -1,7 +1,12 @@
-import React from 'react';
+import React from "react";
+import Publications from "../component/\bpublications/Publications";
 
-export const Publication = () => {
-  return <div>Publication </div>;
+const Publication = () => {
+  return (
+    <>
+      <Publications />
+    </>
+  );
 };
 
 export default Publication;

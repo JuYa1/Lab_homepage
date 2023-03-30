@@ -1,5 +1,5 @@
 from django.contrib import admin
-from homepage_app.models import Member,Member_Publications,Publications,Team,TFT,News,TFTImage
+from homepage_app.models import Member,Publications,Team,TFT,News,TFTImage
 
 class PhotoInline(admin.TabularInline):
     model = TFTImage
@@ -9,7 +9,6 @@ class PostTFT(admin.ModelAdmin):
     inlines = [PhotoInline, ]
 
 admin.site.register(Member)
-admin.site.register(Member_Publications)
 admin.site.register(Publications)
 admin.site.register(Team)
 admin.site.register(TFT,PostTFT)

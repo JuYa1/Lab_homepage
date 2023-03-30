@@ -1,4 +1,4 @@
-.membercard {
+.newscard {
   display: flex;
   flex-direction: row;
   width: 100%;
@@ -7,18 +7,18 @@
   box-sizing: border-box; /* border 안으로 넣기 */
 }
 
-.memberimg {
+.newsimg {
   width: 180px;
   height: 180px;
 }
 
-.memimg {
+.newsimg {
   width: 180px;
   height: 180px;
   object-fit: cover;
 }
 
-.memberdesc {
+.newsdesc {
   display: flex;
   flex-direction: column;
 }

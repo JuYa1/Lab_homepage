@@ -1,0 +1,17 @@
+.newscontainer {
+  display: flex;
+  width: 100%;
+  align-items: center;
+  flex-direction: column;
+}
+
+.newsList {
+  width: 100%;
+  max-width: 1170px;
+  /* view-port height */
+  min-height: calc(100vh - 3rem - 3rem);
+}
+
+.header {
+  border-bottom: 1px solid black;
+}

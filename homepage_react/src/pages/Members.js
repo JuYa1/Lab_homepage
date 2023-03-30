@@ -23,15 +23,23 @@ function Members() {
     <div className={styles.memcontainer}>
       <div className={styles.memList}>
         <h1 className={styles.header}>Advisor</h1>
-        {/* <MemberList data={list.advisor} /> */}
+        <MemberList
+          data={members.members.filter(
+            (member) => member.position === "Advisor"
+          )}
+        />
         <h1 className={styles.header}>ph.D candidate</h1>
-        {/* <MemberList data={list.ph} /> */}
+        <MemberList
+          data={members.members.filter((member) => member.position === "phD")}
+        />
         <h1 className={styles.header}>M.S candidate</h1>
-        {/* <MemberList data={list.advisor} /> */}
+        <MemberList
+          data={members.members.filter((member) => member.position === "MS")}
+        />
         <h1 className={styles.header}>Student</h1>
         <MemberList
           data={members.members.filter(
-            (member) => member.position === "student"
+            (member) => member.position === "Student"
           )}
         />
       </div>
