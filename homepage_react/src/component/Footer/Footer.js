@@ -1,11 +1,10 @@
-import React from 'react';
-import styles from './Footer.module.css';
-import axios from 'axios';
+import React from "react";
+import styles from "./Footer.module.css";
+import axios from "axios";
 
 function Footer() {
   const test22 = () => {
-    alert('test');
-    axios.get('/member');
+    alert("test");
   };
   return (
     <footer className={styles.footer}>

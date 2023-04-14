@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 import styles from "./memberCard.module.css";
 function MemberCard({ data }) {
   return (
@@ -15,7 +16,9 @@ function MemberCard({ data }) {
         <div>{data.name}</div>
         <div>{data.email}</div>
         <div>{data.profile}</div>
-        <button>more</button>
+        <Link to={"/Members/1"} className="link">
+          <div>MORE</div>
+        </Link>
       </div>
     </div>
   );

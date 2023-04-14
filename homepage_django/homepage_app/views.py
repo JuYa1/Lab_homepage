@@ -33,6 +33,7 @@ def get_member(request, mem_key):
     if request.method == 'GET':
         member = Member.objects.get(mem_key=mem_key)
         response_data = serializers.serialize('json', [member])
+        
         return HttpResponse(response_data, content_type='application/json')
 
 def get_team(request):
@@ -53,12 +54,22 @@ def get_tft(request):
     tftimages = TFTImage.objects.all()
     tftimage_serializer = TFTImageSerializer(tftimages, many=True)
 
-    response_data = {
-        'tft': tft_serializer.data,
-        'tftimage': tftimage_serializer.data,
-    }
+    response_data = []
+    for tft in tft_serializer.data:
+        tft_data = {
+            'tft_key': tft['tft_key'],
+            'tft_name': tft['tft_name'],
+            'tft_explation': tft['tft_explation'],
+            'tft_images': []
+        }
+        for tftimage in tftimage_serializer.data:
+            if tftimage['TFT_ForeignKey'] == tft['tft_key']:
+                image_url = tftimage['tft_image'].replace('/media/', '')
+                tft_data['tft_images'].append(image_url)
+        response_data.append(tft_data)
 
-    return Response(response_data)
+    return Response({'tft': response_data})
+
 
 def read_csv_data(file_path):
     data = defaultdict(lambda: defaultdict(list))
@@ -93,4 +104,6 @@ def send_csv(request):
         data_list.append({"year": year, "publications": publications})
 
     return JsonResponse(data_list, safe=False)
+
+
 

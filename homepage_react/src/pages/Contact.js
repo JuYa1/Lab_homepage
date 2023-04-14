@@ -1,6 +1,6 @@
-import React from 'react';
-import styles from './Contact.module.css';
-import Labmap from './Labmap';
+import React from "react";
+import styles from "./Contact.module.css";
+import Labmap from "./Labmap";
 function Contact() {
   return (
     <div className={styles.contactprovider}>

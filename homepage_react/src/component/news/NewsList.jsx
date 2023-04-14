@@ -5,7 +5,7 @@ import styles from "./newsList.module.css";
 function NewsList({ data }) {
   return (
     <div className={styles.newslist}>
-      {data.map((_, __) => (
+      {[...data].reverse().map((_, __) => (
         <MemberCard data={_} key={__} />
       ))}
     </div>

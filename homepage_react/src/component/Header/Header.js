@@ -1,7 +1,7 @@
-import React from 'react';
-import { Link } from 'react-router-dom';
-import styles from './Header.module.css';
-import logo from './../../images/snslab.png';
+import React from "react";
+import { Link } from "react-router-dom";
+import styles from "./Header.module.css";
+import logo from "./../../images/snslab.png";
 
 function Header() {
   return (
@@ -26,7 +26,7 @@ function Header() {
             </li>
             <li className={styles.li}>
               <Link className="link" to="/LabProject">
-                PROJECT
+                TFT
               </Link>
             </li>
             <li className={styles.li}>

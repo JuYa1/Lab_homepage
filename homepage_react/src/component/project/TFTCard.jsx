@@ -5,7 +5,7 @@ function TFTCard({ data }) {
     <div className={styles.tftcard}>
       <div className={styles.tftimg}>
         <div>
-          <img src={`http://localhost:8000/media/${data.tft_image}`} />
+          <img src={`http://localhost:8000/media/${data.tft_images[0]}`} />
         </div>
       </div>
       <div className={styles.tftdesc}>

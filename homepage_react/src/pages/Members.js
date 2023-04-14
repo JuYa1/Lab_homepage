@@ -22,21 +22,21 @@ function Members() {
   return (
     <div className={styles.memcontainer}>
       <div className={styles.memList}>
-        <h1 className={styles.header}>Advisor</h1>
+        <h1 className={styles.header}>지도교수</h1>
         <MemberList
           data={members.members.filter(
             (member) => member.position === "Advisor"
           )}
         />
-        <h1 className={styles.header}>ph.D candidate</h1>
+        <h1 className={styles.header}>박사과정</h1>
         <MemberList
           data={members.members.filter((member) => member.position === "phD")}
         />
-        <h1 className={styles.header}>M.S candidate</h1>
+        <h1 className={styles.header}>석사과정</h1>
         <MemberList
           data={members.members.filter((member) => member.position === "MS")}
         />
-        <h1 className={styles.header}>Student</h1>
+        <h1 className={styles.header}>학사과정</h1>
         <MemberList
           data={members.members.filter(
             (member) => member.position === "Student"

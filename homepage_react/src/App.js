@@ -6,6 +6,7 @@ import Contact from "./pages/Contact";
 import Home from "./pages/Home";
 import LabProject from "./pages/LabProject";
 import Members from "./pages/Members";
+import MemberInfo from "./pages/MemberInfo";
 import Publication from "./pages/Publication";
 import News from "./pages/News";
 import React, { useState, useEffect } from "react";
@@ -18,7 +19,7 @@ function App() {
         <Route path="/" element={<Home />} />
         <Route path="/Contact" element={<Contact />} />
         <Route path="/Members" element={<Members />} />
-        <Route path="/Members/:pk" element={<Members />} />
+        <Route path="/Members/:pk" element={<MemberInfo />} />
         <Route path="/LabProject" element={<LabProject />} />
         <Route path="/Publication" element={<Publication />} />
         <Route path="/News" element={<News />} />

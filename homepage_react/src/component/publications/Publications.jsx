@@ -1,18 +1,8 @@
-import React, { useEffect, useState } from "react";
-import axios from "axios";
+import React from "react";
 import YearItem from "./YearItem";
 import styles from "./publications.module.css";
 
-const Publications = () => {
-  const [publications, setPublications] = useState([]);
-  useEffect(() => {
-    (async () => {
-      try {
-        const res = await axios.get("/send_csv");
-        setPublications(res.data);
-      } catch (err) {}
-    })();
-  }, []);
+const Publications = ({ publications }) => {
   return (
     <>
       <div className={styles.publications}>Publication</div>
