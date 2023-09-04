@@ -16,9 +16,6 @@ export const LabProject = () => {
   };
   useEffect(() => {
     gettft();
-    if (tft !== null) {
-      console.log(tft.tft);
-    }
   }, []);
   if (tft === null) {
     return <div>Loading...</div>;
@@ -27,7 +24,7 @@ export const LabProject = () => {
   return (
     <div className={styles.projectcontainer}>
       <div className={styles.teamList}>
-        <h1 className={styles.header}>TFT</h1>
+        <h1 className={styles.header}>project</h1>
         <TFTList data={tft.tft} />
       </div>
     </div>

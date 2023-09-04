@@ -7,7 +7,7 @@ function MemberCard({ data }) {
       <div className={styles.memberimg}>
         <div>
           <img
-            src={`http://localhost:8000/media/${data.mem_image}`}
+            src={`${process.env.REACT_APP_API_URL}${data.mem_image}`}
             className={styles.memimg}
           />
         </div>
@@ -16,8 +16,8 @@ function MemberCard({ data }) {
         <div>{data.name}</div>
         <div>{data.email}</div>
         <div>{data.profile}</div>
-        <Link to={"/Members/1"} className="link">
-          <div>MORE</div>
+        <Link to={`/Members/${data.name}`} className="link">
+          <div className={styles.btnmore}>MORE</div>
         </Link>
       </div>
     </div>

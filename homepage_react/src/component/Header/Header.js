@@ -26,7 +26,7 @@ function Header() {
             </li>
             <li className={styles.li}>
               <Link className="link" to="/LabProject">
-                TFT
+                PROJECT
               </Link>
             </li>
             <li className={styles.li}>

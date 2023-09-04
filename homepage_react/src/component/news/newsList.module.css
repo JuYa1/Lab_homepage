@@ -1,6 +1,0 @@
-.newslist {
-  display: flex;
-  flex-direction: row;
-  flex-wrap: wrap; /* 초과되면 다음 줄로 넘기기 */
-  justify-content: flex-start;
-}

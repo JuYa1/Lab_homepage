@@ -1,14 +1,14 @@
-import NewsContents from "../contents/HomeNews";
+import PubContents from "../contents/HomePub";
 import styles from "./homeview.module.css";
 
-function HomeNewsView({ data }) {
+function HomePubView({ data }) {
   if (!Array.isArray(data)) {
     return <div>데이터가 없습니다.</div>;
   }
 
   // 연도와 항목을 모두 하나의 배열로 합치기
   const allItems = data.flatMap((item) => {
-    return { ...item, year: item.news_year };
+    return { ...item, year: item.pub_year };
   });
 
   // 항목을 날짜별로 내림차순 정렬
@@ -20,13 +20,12 @@ function HomeNewsView({ data }) {
   const selectedItems = sortedItems.slice(-5).reverse();
 
   return (
-    <div className={styles.newslist}>
-      <div className={styles.yearitem}>
-        {/* <div className={styles.year}>최신</div> */}
-        <div className={styles.yearpublications}>
+    <div className={styles.newslist_h}>
+      <div className={styles.yearitem_h}>
+        <div className={styles.yearpublications_h}>
           {selectedItems.map((item, index) => (
             <div key={index}>
-              <NewsContents data={item} />
+              <PubContents data={item} />
             </div>
           ))}
         </div>
@@ -35,4 +34,4 @@ function HomeNewsView({ data }) {
   );
 }
 
-export default HomeNewsView;
+export default HomePubView;

@@ -8,6 +8,7 @@ function Members() {
   const getMember = async () => {
     try {
       const res = await axios.get("/get_member");
+      //아이피 부분 추가하기
       setMembers(res.data);
     } catch (err) {
       console.log(err);

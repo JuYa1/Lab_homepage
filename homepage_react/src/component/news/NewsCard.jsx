@@ -1,22 +1,14 @@
-import React from "react";
-import styles from "./newsCard.module.css";
-function MemberCard({ data }) {
+import styles from "./news.module.css";
+
+function NewsCard({ data }) {
   return (
-    <div className={styles.newscard}>
-      <div className={styles.newsimg}>
-        <div>
-          <img
-            src={`http://localhost:8000/media/${data.news_image}`}
-            className={styles.newsimg}
-          />
-        </div>
-      </div>
+    <div className={styles.newscard_n}>
       <div className={styles.newsdesc}>
         <div>{data.news_name}</div>
-        <div>{data.news}</div>
+        <div className={styles.sidedesc_n}>{data.news}</div>
       </div>
     </div>
   );
 }
 
-export default MemberCard;
+export default NewsCard;

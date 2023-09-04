@@ -4,6 +4,7 @@ from .models import Member
 from .models import Team
 from .models import TFT, TFTImage
 from .models import News
+from .models import Publications
 from .serializers import TFTSerializer, TFTImageSerializer
 from django.core import serializers
 from rest_framework.response import Response
@@ -14,6 +15,7 @@ import os
 from collections import defaultdict
 from django.http import JsonResponse
 from PIL import Image
+from django.db.models import Count
 
 
 def main(request):
@@ -28,13 +30,14 @@ def get_members(request):
         response_data = {'members': list(members.values())}
         return HttpResponse(json.dumps(response_data), content_type='application/json')
 
-
-def get_member(request, mem_key):
+def get_member(request, name):
     if request.method == 'GET':
-        member = Member.objects.get(mem_key=mem_key)
-        response_data = serializers.serialize('json', [member])
-        
-        return HttpResponse(response_data, content_type='application/json')
+        try:
+            members = Member.objects.filter(name=name)
+            member_data = list(members.values('mem_key', 'name', 'email', 'profile','mem_image'))
+            return JsonResponse({'members': member_data})
+        except Member.DoesNotExist:
+            return HttpResponse(status=404)        
 
 def get_team(request):
     team = Team.objects.all().values()
@@ -70,40 +73,22 @@ def get_tft(request):
 
     return Response({'tft': response_data})
 
+def get_publications(request):
+    publications = Publications.objects.all().values(
+        'pub_key', 'pub_year', 'pub_name', 'author_name', 'conference_name', 'm_id_id'
+    )
+    
+    response_data = {'publications': list(publications)}
+    return JsonResponse(response_data, safe=False)
 
-def read_csv_data(file_path):
-    data = defaultdict(lambda: defaultdict(list))
-    with open(file_path, mode='r') as csv_file:
-        reader = csv.DictReader(csv_file)
-        for row in reader:
-            name = row['name']
-            year = row['pub_year']
-            data[name][year].append(row)
-
-    sorted_data = {}
-    for name, years in data.items():
-        sorted_data[name] = dict(sorted(years.items(), reverse=True))
-
-    return sorted_data
-
-def send_csv(request):
-    file_path = os.path.join(os.path.dirname(__file__), 'crawlingcsv/scholar.csv')
-    sorted_data = read_csv_data(file_path)
-
-    # Group the data by year
-    data_by_year = defaultdict(list)
-    for name, years in sorted_data.items():
-        for year, publications in years.items():
-            year = int(year)
-            for publication in publications:
-                data_by_year[year].append(publication)
-
-    # Convert the data_by_year dictionary to a list of dictionaries
-    data_list = []
-    for year, publications in data_by_year.items():
-        data_list.append({"year": year, "publications": publications})
-
-    return JsonResponse(data_list, safe=False)
-
+def get_client_ip(request):
+    client_ip = request.META.get('REMOTE_ADDR', None)
+    port = 8000
+    if client_ip:
+        data = {'client_ip': client_ip, 'port': port}
+        return JsonResponse(data)
+    else:
+        return JsonResponse({'error': 'Unable to determine client IP'})
+    
 
 

@@ -1,0 +1,18 @@
+.homecard {
+  width: 100%;
+  padding: 1rem;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: flex-start;
+}
+
+.homedesc {
+  display: flex;
+  flex-direction: column;
+}
+
+.sidedesc {
+  color: gray;
+}

@@ -1,10 +1,4 @@
-.publications {
-  width: 100vw;
-  padding-top: 5rem;
-  font-size: 2rem;
-}
-
-.yearitem {
+.yearitem_h {
   display: flex;
   width: inherit;
   flex-direction: row;
@@ -12,7 +6,7 @@
   align-items: flex-start;
 }
 
-.year {
+.year_h {
   padding: 1rem;
   box-sizing: border-box;
   width: 6rem;
@@ -22,23 +16,13 @@
   align-items: flex-start;
 }
 
-.yearpublications {
+.yearpublications_h {
   width: 100%;
 }
 
-.publicationitem {
-  width: 100%;
-  padding: 1rem;
-  box-sizing: border-box;
+.newslist_h {
   display: flex;
-  flex-direction: column;
+  flex-direction: row;
+  flex-wrap: wrap;
   justify-content: flex-start;
-  align-items: flex-start;
-}
-
-.publicationitemtitle {
-  font-weight: bold;
-}
-.publicationitemdesc {
-  color: gray;
 }

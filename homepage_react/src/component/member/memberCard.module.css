@@ -22,3 +22,52 @@
   display: flex;
   flex-direction: column;
 }
+
+.btnmore {
+  width: 130px;
+  height: 40px;
+  line-height: 42px;
+  padding: 0;
+  border: none;
+  background: rgb(255, 27, 0);
+  background: linear-gradient(
+    0deg,
+    rgba(255, 27, 0, 1) 0%,
+    rgba(251, 75, 2, 1) 100%
+  );
+}
+.pubcontainer_m {
+  display: flex;
+  padding-top: 2rem;
+  width: 100%;
+  align-items: center;
+  flex-direction: column;
+}
+
+.pubList_m {
+  width: 100%;
+  max-width: 1170px;
+  /* view-port height */
+  min-height: calc(100vh - 3rem - 3rem);
+}
+
+.header_m {
+  border-bottom: 1px solid black;
+}
+
+.memcontainer_m {
+  display: flex;
+  padding-top: 6rem;
+  width: 100%;
+  align-items: center;
+  flex-direction: column;
+}
+
+.membercard_m {
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+  max-width: calc(1170px); /* 수학적 계산 */
+  /* border: 1px solid black; */
+  box-sizing: border-box; /* border 안으로 넣기 */
+}

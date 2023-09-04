@@ -6,19 +6,20 @@ class Member(models.Model):
     name = models.CharField(max_length=200)
     email = models.EmailField()
     profile = models.TextField()
+    g_scholar_id = models.CharField(max_length=50, default='')
     mem_image = models.ImageField(upload_to='homepage_app/img/member' , blank=True, null=True)
  
     def __str__(self):
         return self.name
     
 class Publications(models.Model):
-    pub_key = models.BigIntegerField(help_text="pub_ID",primary_key=True)
-    pub_year = models.IntegerField(max_length=4)
-    pub_name = models.CharField(max_length=32) #논문명
-    author_name = models.CharField(max_length=32) #저자
-    conference_name = models.CharField(max_length=32) #학회명
-    m_id = models.ForeignKey("Member", related_name="mem", on_delete=models.CASCADE, db_column="m_id")
- 
+    pub_key = models.AutoField(primary_key=True)
+    pub_year = models.IntegerField(null=True)
+    pub_name = models.CharField(max_length=256)  # 논문명
+    author_name = models.CharField(max_length=32)  # 저자
+    conference_name = models.CharField(max_length=32)  # 학회명
+    m_id = models.ForeignKey("Member", related_name="publications", on_delete=models.CASCADE, db_column="m_id")
+
     def __str__(self):
         return self.pub_name
 
